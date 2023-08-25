@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQLManagerDAO implements DAOManager {
+public class MySQLManagerDAO extends DAOManager {
 
     private Connection conn;
     private PersonaDAO persona = null;
