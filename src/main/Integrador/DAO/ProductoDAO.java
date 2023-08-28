@@ -1,4 +1,6 @@
 package main.Integrador.DAO;
 
-public interface ProductoDAO extends DAO {
+import main.Integrador.Modelo.Producto;
+
+public interface ProductoDAO extends DAO<Producto> {
 }

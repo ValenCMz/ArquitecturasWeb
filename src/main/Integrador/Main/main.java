@@ -1,6 +1,7 @@
 package main.Integrador.Main;
 
 import main.Integrador.DAO.DAOFactory;
+import main.Integrador.Modelo.Producto;
 import main.Integrador.MySQL_DAO.MySQLManagerDAO;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -26,10 +27,9 @@ public class main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        /*
         for(CSVRecord row: parser) {
-            System.out.println(row.get("idProducto"));
-            System.out.println(row.get("nombre"));
-            System.out.println(row.get("valor"));
-        }
+            df.getProductoDAO().insert(new Producto(Integer.valueOf(row.get("idProducto")),row.get("nombre"),Float.valueOf(row.get("valor"))));
+        }*/
     }
 }

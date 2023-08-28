@@ -1,5 +1,7 @@
 package main.Integrador.DAO;
 
-public interface FacturaDAO extends DAO{
+import main.Integrador.Modelo.Factura;
+
+public interface FacturaDAO extends DAO<Factura> {
 
 }

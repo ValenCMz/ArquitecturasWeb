@@ -1,13 +1,14 @@
 package main.Integrador.DAO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface DAO<T>{
     //	CRUD
-    void insert(T d);
-    void update(T d);
-    void delete(T d);
-    ArrayList getAll();
-    void crearTabla();
+    public void insert(T d);
+    public void update(T d);
+    public void delete(T d);
+    public List getAll();
+    public void crearTabla();
 
 }

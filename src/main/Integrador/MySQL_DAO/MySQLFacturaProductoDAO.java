@@ -2,6 +2,7 @@ package main.Integrador.MySQL_DAO;
 
 import main.Integrador.DAO.DAO;
 import main.Integrador.DAO.FacturaProductoDAO;
+import main.Integrador.Modelo.Factura_Producto;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -16,28 +17,24 @@ public class MySQLFacturaProductoDAO implements FacturaProductoDAO {
     }
 
 
+
     @Override
-    public void insert(DAO d) {
+    public void insert(Factura_Producto d) {
 
     }
 
     @Override
-    public void update(DAO d) {
+    public void update(Factura_Producto d) {
 
     }
 
     @Override
-    public void delete(DAO d) {
+    public void delete(Factura_Producto d) {
 
     }
 
     @Override
     public ArrayList getAll() {
-        return null;
-    }
-
-    @Override
-    public DAO get(int id) {
         return null;
     }
 

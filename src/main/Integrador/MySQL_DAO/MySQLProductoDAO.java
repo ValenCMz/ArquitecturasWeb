@@ -2,8 +2,10 @@ package main.Integrador.MySQL_DAO;
 
 import main.Integrador.DAO.DAO;
 import main.Integrador.DAO.ProductoDAO;
+import main.Integrador.Modelo.Producto;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -14,27 +16,32 @@ public class MySQLProductoDAO implements ProductoDAO {
         this.conn = conn;
     }
     @Override
-    public void insert(DAO d) {
+    public void insert(Producto d) {
+        String sentence = "INSERT INTO producto (idProducto,nombre,valor) VALUES(?,?,?)";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sentence);
+            ps.setInt(1,d.getIdProducto());
+            ps.setString(2,d.getNombre());
+            ps.setFloat(3,d.getValor());
+            ps.executeUpdate();
+            conn.commit();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void update(Producto d) {
 
     }
 
     @Override
-    public void update(DAO d) {
-
-    }
-
-    @Override
-    public void delete(DAO d) {
+    public void delete(Producto d) {
 
     }
 
     @Override
     public ArrayList getAll() {
-        return null;
-    }
-
-    @Override
-    public DAO get(int id) {
         return null;
     }
 

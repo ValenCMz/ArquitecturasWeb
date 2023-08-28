@@ -2,6 +2,7 @@ package main.Integrador.MySQL_DAO;
 
 import main.Integrador.DAO.ClienteDAO;
 import main.Integrador.DAO.DAO;
+import main.Integrador.Modelo.Cliente;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -16,17 +17,17 @@ public class MySQLClienteDAO implements ClienteDAO {
     }
 
     @Override
-    public void insert(DAO d) {
+    public void insert(Cliente d) {
 
     }
 
     @Override
-    public void update(DAO d) {
+    public void update(Cliente d) {
 
     }
 
     @Override
-    public void delete(DAO d) {
+    public void delete(Cliente d) {
 
     }
 
@@ -35,10 +36,6 @@ public class MySQLClienteDAO implements ClienteDAO {
         return null;
     }
 
-    @Override
-    public DAO get(int id) {
-        return null;
-    }
 
     @Override
     public void crearTabla() {
