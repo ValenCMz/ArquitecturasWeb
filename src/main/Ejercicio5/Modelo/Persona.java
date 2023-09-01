@@ -1,9 +1,6 @@
 package main.Ejercicio5.Modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 
 //Le decimos q la clase persona es una tabla en la base de datos
 @Entity
@@ -15,7 +12,7 @@ public class Persona {
     private String nombre;
     @Column
     private int edad;
-    @ManyToMany //Muchas personas pueden vivir en un mismo domicilio, pero una persona no puede tener muchas direcciones
+    @ManyToOne //Muchas personas pueden vivir en un mismo domicilio, pero una persona no puede tener muchas direcciones
     private Direccion domicilio;
 
     public Persona(int id, String nombre, int edad, Direccion domicilio) {
