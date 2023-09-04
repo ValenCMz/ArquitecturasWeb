@@ -3,8 +3,8 @@ package main.Ejercicio5.Modelo;
 import javax.persistence.*;
 
 //Le decimos q la clase persona es una tabla en la base de datos
-@Entity
 public class Persona {
+    /*
     //Definimos a q dato en la base de datos representa, por ejemplo el id es de tipo @Id y el nombre es una columna
     @Id
     private int id;
@@ -20,6 +20,10 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.domicilio = domicilio;
+    }
+
+    public Persona() {
+
     }
 
     public int getId() {
@@ -60,4 +64,6 @@ public class Persona {
                 ", domicilio=" + domicilio +
                 '}';
     }
+
+     */
 }

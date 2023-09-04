@@ -8,7 +8,7 @@ import java.util.List;
 public class Direccion {
 
     @Id
-    @GeneratedValue(Strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(length = 255)
     private String calle;

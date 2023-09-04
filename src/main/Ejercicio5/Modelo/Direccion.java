@@ -2,8 +2,9 @@ package main.Ejercicio5.Modelo;
 
 import javax.persistence.*;
 
-@Entity
+
 public class Direccion {
+  /*
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -45,4 +46,6 @@ public class Direccion {
                 ", calle='" + calle + '\'' +
                 '}';
     }
+   */
 }
+
