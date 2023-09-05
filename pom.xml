@@ -11,6 +11,7 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.21</version>
     </dependency>
+
     <dependency>
       <groupId>org.apache.derby</groupId>
       <artifactId>derby</artifactId>
@@ -22,12 +23,23 @@
       <artifactId>derbytools</artifactId>
       <version>10.15.2.0</version>
     </dependency>
+
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <version>5.4.20.Final</version>
     </dependency>
-  </dependencies>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.3.9</version>
+    </dependency>
+
+
+
+
+</dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>

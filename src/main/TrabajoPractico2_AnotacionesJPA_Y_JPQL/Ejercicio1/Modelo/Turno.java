@@ -51,4 +51,13 @@ public class Turno {
     public void setJugadores(List<Persona> jugadores) {
         this.jugadores = jugadores;
     }
+
+    @Override
+    public String toString() {
+        return "Turno{" +
+                "id=" + id +
+                ", fecha=" + fecha +
+                ", jugadores=" + jugadores +
+                '}' + "\n";
+    }
 }

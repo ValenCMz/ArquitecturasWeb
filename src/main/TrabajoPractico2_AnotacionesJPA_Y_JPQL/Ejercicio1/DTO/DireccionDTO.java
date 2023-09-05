@@ -1,31 +1,19 @@
-package main.TrabajoPractico2_AnotacionesJPA_Y_JPQL.Ejercicio1.Modelo;
+package main.TrabajoPractico2_AnotacionesJPA_Y_JPQL.Ejercicio1.DTO;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-public class Direccion {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class DireccionDTO {
     private int id;
-    @Column(length = 255)
     private String calle;
-    @Column(length = 255)
     private String ciudad;
 
-    //Una direccion puede ir a muchas personas, se necesita si o si una coleccion
-    @OneToMany(mappedBy="domicilio", fetch = FetchType.LAZY)
-    private List<Persona> habitante;
+    private List<PersonaDTO> habitante;
 
-    public Direccion(String calle, String ciudad) {
+    public DireccionDTO(int id, String calle, String ciudad) {
+        this.id = id;
         this.calle = calle;
         this.ciudad = ciudad;
-        this.habitante = new ArrayList<>();
-    }
-
-    public Direccion() {
         this.habitante = new ArrayList<>();
     }
 
@@ -49,14 +37,21 @@ public class Direccion {
         this.ciudad = ciudad;
     }
 
+    public List<PersonaDTO> getHabitante() {
+        return habitante;
+    }
+
+    public void setHabitante(List<PersonaDTO> habitante) {
+        this.habitante = habitante;
+    }
+
     @Override
     public String toString() {
-        return "Direccion{" +
+        return "DireccionDTO{" +
                 "id=" + id +
                 ", calle='" + calle + '\'' +
                 ", ciudad='" + ciudad + '\'' +
                 ", habitante=" + habitante +
-                '}' + "\n";
+                '}';
     }
 }
-

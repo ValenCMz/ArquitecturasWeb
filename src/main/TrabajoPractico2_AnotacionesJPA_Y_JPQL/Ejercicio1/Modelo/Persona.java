@@ -13,7 +13,7 @@ public class Persona {
     private String nombre;
 
     //Muchas personas van a una direccion
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Direccion domicilio;
 
     @ManyToMany(mappedBy = "jugadores", fetch = FetchType.LAZY)
@@ -24,6 +24,10 @@ public class Persona {
         this.anios = anios;
         this.nombre = nombre;
         this.domicilio = domicilio;
+    }
+
+    public Persona() {
+
     }
 
     public int getId() {
@@ -56,5 +60,16 @@ public class Persona {
 
     public void setDomicilio(Direccion domicilio) {
         this.domicilio = domicilio;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", anios=" + anios +
+                ", nombre='" + nombre + '\'' +
+                ", domicilio=" + domicilio +
+                ", turnos=" + turnos +
+                '}' + "\n";
     }
 }

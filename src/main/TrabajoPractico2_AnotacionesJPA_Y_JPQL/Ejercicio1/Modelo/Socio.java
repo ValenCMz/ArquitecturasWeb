@@ -50,5 +50,12 @@ public class Socio {
         this.persona = persona;
     }
 
-
+    @Override
+    public String toString() {
+        return "Socio{" +
+                "id=" + id +
+                ", tipo='" + tipo + '\'' +
+                ", persona=" + persona +
+                '}' + "\n";
+    }
 }
