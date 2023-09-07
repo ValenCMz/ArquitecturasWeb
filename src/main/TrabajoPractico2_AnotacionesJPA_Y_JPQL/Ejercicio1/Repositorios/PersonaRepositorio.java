@@ -16,4 +16,7 @@ public interface PersonaRepositorio {
     public List<PersonaDTO> getPersonas();
 
     public void delete(int id);
+
+    public List<PersonaDTO> getPersonasAsignadasAUnTurno();
+    public List<PersonaDTO> getPersonasAsignadasAUnTurnoSocio();
 }

@@ -16,8 +16,7 @@ public class Socio {
     @MapsId
     private Persona persona;
 
-    public Socio(int id, String tipo, Persona persona) {
-        this.id = id;
+    public Socio( String tipo, Persona persona) {
         this.tipo = tipo;
         this.persona = persona;
     }

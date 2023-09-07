@@ -4,6 +4,7 @@ import main.TrabajoPractico2_AnotacionesJPA_Y_JPQL.Ejercicio1.DTO.DireccionDTO;
 import main.TrabajoPractico2_AnotacionesJPA_Y_JPQL.Ejercicio1.DTO.PersonaDTO;
 import main.TrabajoPractico2_AnotacionesJPA_Y_JPQL.Ejercicio1.Modelo.Direccion;
 import main.TrabajoPractico2_AnotacionesJPA_Y_JPQL.Ejercicio1.Modelo.Persona;
+import main.TrabajoPractico2_AnotacionesJPA_Y_JPQL.Ejercicio1.Modelo.Turno;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -60,6 +61,26 @@ public class PersonaRepositorioImpl implements PersonaRepositorio{
         if(p!=null){
             em.remove(p);
         }
-
     }
+
+    public List<PersonaDTO>getPersonasAsignadasAUnTurno(){
+        List<PersonaDTO>toReturn = new ArrayList<>();
+        List<Persona> p = em.createQuery("SELECT p FROM Persona p JOIN p.turnos t", Persona.class).getResultList();
+        for(Persona p1 : p){
+            toReturn.add(new PersonaDTO(p1.getId(), p1.getAnios(),p1.getNombre(),p1.getDomicilio().getId()));
+        }
+        return toReturn;
+    }
+
+    @Override
+    public List<PersonaDTO> getPersonasAsignadasAUnTurnoSocio() {
+        List<PersonaDTO>toReturn = new ArrayList<>();
+        List<Persona> p = em.createQuery("SELECT p FROM Persona p JOIN p.turnos t JOIN Socio s ON p.id = s.id", Persona.class).getResultList();
+        for(Persona p1 : p){
+            toReturn.add(new PersonaDTO(p1.getId(), p1.getAnios(),p1.getNombre(),p1.getDomicilio().getId()));
+        }
+        return toReturn;
+    }
+
+
 }

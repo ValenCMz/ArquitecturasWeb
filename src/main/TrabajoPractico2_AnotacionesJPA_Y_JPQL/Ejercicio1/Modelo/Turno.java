@@ -4,6 +4,7 @@ import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,10 +19,9 @@ public class Turno {
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Persona>jugadores;
 
-    public Turno(int id, Timestamp fecha, List<Persona> jugadores) {
-        this.id = id;
+    public Turno( Timestamp fecha) {
         this.fecha = fecha;
-        this.jugadores = jugadores;
+        this.jugadores = new ArrayList<>();
     }
 
     public Turno(){
