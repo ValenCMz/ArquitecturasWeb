@@ -21,9 +21,9 @@ public class Main {
         TurnoRepositorio turnoRepositorio = new TurnoRepositorioImpl(em);
         SocioRepositorio socioRepositorio = new SocioRepositorioImpl(em);
         em.getTransaction().begin();
-        Direccion d1 =  new Direccion("Olavarria","asasa");
-        Direccion d2 = new Direccion("Azul","asda");
-        Direccion d3 = new Direccion("Tandil","asda");
+        Direccion d1 =  new Direccion("Belgrano","Olavarria");
+        Direccion d2 = new Direccion("25 de febrero","Tandil");
+        Direccion d3 = new Direccion("Rauch","asda");
         Direccion d4 = new Direccion("Rauch","asda");
         Direccion d5 = new Direccion("Montenegro","asda");
         Direccion d6 = new Direccion("Uruguay","asda");
@@ -40,8 +40,8 @@ public class Main {
         Socio s2 = new Socio("B",p2);
 
 
-
-     /*   direccionRepositorio.insert(d1);
+/*
+      direccionRepositorio.insert(d1);
         direccionRepositorio.insert(d2);
 
         personaRepositorio.insert(p1);
@@ -56,11 +56,9 @@ public class Main {
 
         socioRepositorio.insert(s1);
         socioRepositorio.insert(s2);
+*/
 
-
-      */
-
-      System.out.println(personaRepositorio.getPersonasAsignadasAUnTurnoSocio());
+        System.out.println(personaRepositorio.getPersonasPorCiudad("Tandil"));
 
         em.getTransaction().commit();
         em.close();

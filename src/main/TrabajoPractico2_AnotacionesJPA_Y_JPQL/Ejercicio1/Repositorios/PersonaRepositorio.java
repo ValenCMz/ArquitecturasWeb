@@ -19,4 +19,6 @@ public interface PersonaRepositorio {
 
     public List<PersonaDTO> getPersonasAsignadasAUnTurno();
     public List<PersonaDTO> getPersonasAsignadasAUnTurnoSocio();
+
+    public List<PersonaDTO> getPersonasPorCiudad(String ciudad);
 }

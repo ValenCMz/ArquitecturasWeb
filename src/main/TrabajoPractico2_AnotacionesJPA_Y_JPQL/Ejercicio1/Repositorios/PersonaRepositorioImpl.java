@@ -82,5 +82,12 @@ public class PersonaRepositorioImpl implements PersonaRepositorio{
         return toReturn;
     }
 
-
+    @Override
+    public List<PersonaDTO>getPersonasPorCiudad(String ciudad){
+        List<PersonaDTO>toReturn =  new ArrayList<>();
+        List<Persona> p = em.createQuery("SELECT p FROM Persona p JOIN Direccion d ON p.domicilio.id = d.id WHERE d.ciudad LIKE :ciudad",Persona.class).setParameter("ciudad",ciudad).getResultList();
+        for (Persona p1: p)
+            toReturn.add(new PersonaDTO(p1.getId(),p1.getAnios(),p1.getNombre(),p1.getDomicilio().getId()));
+        return toReturn;
+    }
 }
