@@ -12,7 +12,7 @@ public class Torneo {
     @Column
     private String nombre;
 
-    @ManyToMany
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Equipo>equipos;
 
     public Torneo(String nombre) {

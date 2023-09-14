@@ -16,10 +16,10 @@ public class Main {
     public static void main(String[]args){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Example");
         EntityManager em = emf.createEntityManager();
-        PersonaRepositorio personaRepositorio = new PersonaRepositorioImpl(em);
-        DireccionRepositorio direccionRepositorio = new DireccionRepositorioImpl(em);
-        TurnoRepositorio turnoRepositorio = new TurnoRepositorioImpl(em);
-        SocioRepositorio socioRepositorio = new SocioRepositorioImpl(em);
+        PersonaRepositorioImpl personaRepositorio = new PersonaRepositorioImpl(em);
+        DireccionRepositorioImpl direccionRepositorio = new DireccionRepositorioImpl(em);
+        TurnoRepositorioImpl turnoRepositorio = new TurnoRepositorioImpl(em);
+        SocioRepositorioImpl socioRepositorio = new SocioRepositorioImpl(em);
         em.getTransaction().begin();
         Direccion d1 =  new Direccion("Belgrano","Olavarria");
         Direccion d2 = new Direccion("25 de febrero","Tandil");

@@ -15,9 +15,12 @@ public class Equipo {
     private String nombre;
 
     //relacion
-    @OneToMany(mappedBy = "equipo")
+    @OneToMany(mappedBy = "equipo", fetch = FetchType.LAZY )
     private List<Jugador>jugadores;
 
+    @JoinColumn(name = "id_torneo")
+    @ManyToOne
+    private Torneo torneo;
 
     public Equipo(String nombre) {
         this.nombre = nombre;

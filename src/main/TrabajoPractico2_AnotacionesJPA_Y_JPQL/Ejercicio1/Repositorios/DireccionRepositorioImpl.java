@@ -58,4 +58,8 @@ public class DireccionRepositorioImpl implements DireccionRepositorio {
             em.remove(d);
         }
     }
+
+    public void imprimir(){
+
+    }
 }
