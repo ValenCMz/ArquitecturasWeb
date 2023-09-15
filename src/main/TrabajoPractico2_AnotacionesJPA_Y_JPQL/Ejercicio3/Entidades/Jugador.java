@@ -37,6 +37,10 @@ public class Jugador {
         return equipo;
     }
 
+    public void setEquipo(Equipo e){
+        this.equipo = e;
+    }
+
     public Jugador(String nombre, String posicion, Equipo equipo) {
         this.nombre = nombre;
         this.posicion = posicion;

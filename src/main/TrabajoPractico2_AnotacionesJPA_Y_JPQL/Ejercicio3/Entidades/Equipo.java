@@ -43,4 +43,8 @@ public class Equipo {
         return jugadores;
     }
 
+    public void setTorneo(Torneo t){
+        this.torneo = t;
+    }
+
 }
