@@ -54,6 +54,9 @@ public class EquipoRepositorioImpl implements EquipoRepositorio{
         if(equipo!=null&&jugador!=null){
             equipo.getJugadores().add(jugador);
             jugador.setEquipo(equipo);
+
+            this.insert(equipo);
+            em.persist(jugador);
         }
     }
 

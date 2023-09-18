@@ -20,6 +20,12 @@ public class Jugador {
 
     }
 
+    public Jugador(String nombre, String posicion, Equipo equipo) {
+        this.nombre = nombre;
+        this.posicion = posicion;
+        this.equipo = equipo;
+    }
+
     public int getId() {
         return id;
     }
@@ -41,9 +47,5 @@ public class Jugador {
         this.equipo = e;
     }
 
-    public Jugador(String nombre, String posicion, Equipo equipo) {
-        this.nombre = nombre;
-        this.posicion = posicion;
-        this.equipo = equipo;
-    }
+
 }

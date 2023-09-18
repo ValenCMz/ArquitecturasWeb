@@ -14,4 +14,14 @@ public class JugadorDTO {
         this.posicion = posicion;
         this.id_equipo = id_equipo;
     }
+
+    @Override
+    public String toString() {
+        return "JugadorDTO{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", posicion='" + posicion + '\'' +
+                ", id_equipo=" + id_equipo +
+                '}';
+    }
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -46,5 +47,25 @@ public class JugadorRepositorioImpl implements JugadorRepositorio{
         if(j!=null){
             em.remove(j);
         }
+    }
+
+    @Override
+    public List<JugadorDTO> getJugadoresPorEquipo(int id_equipo) {
+        List<Jugador>jugadores = em.createQuery("SELECT  j FROM Jugador j WHERE j.equipo.id =  :equipo",Jugador.class).setParameter("equipo",id_equipo).getResultList();
+        List<JugadorDTO>toReturn = new ArrayList<>();
+        for(Jugador j : jugadores){
+            toReturn.add(new JugadorDTO(j.getId(),j.getNombre(),j.getPosicion(),j.getEquipo().getId()));
+        }
+        return toReturn;
+    }
+
+    @Override
+    public List<JugadorDTO> getJugadoresPorTorneo(int id_torneo) {
+        List<Jugador>jugadores = em.createQuery("SELECT  j FROM Jugador j join Equipo e ON j.equipo.id = e.id WHERE e.torneo.id = :torneo ",Jugador.class).setParameter("torneo",id_torneo).getResultList();
+        List<JugadorDTO>toReturn = new ArrayList<>();
+        for(Jugador j : jugadores){
+            toReturn.add(new JugadorDTO(j.getId(),j.getNombre(),j.getPosicion(),j.getEquipo().getId()));
+        }
+        return toReturn;
     }
 }

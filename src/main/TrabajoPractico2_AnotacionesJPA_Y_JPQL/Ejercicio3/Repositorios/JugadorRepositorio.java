@@ -11,5 +11,7 @@ public interface JugadorRepositorio {
     public List<JugadorDTO> getJugadores();
     public JugadorDTO getJugadorDTOById(int id);
     public void delete(int id);
+    public List<JugadorDTO> getJugadoresPorEquipo(int id_equipo);
 
+    public List<JugadorDTO> getJugadoresPorTorneo(int id_torneo);
 }

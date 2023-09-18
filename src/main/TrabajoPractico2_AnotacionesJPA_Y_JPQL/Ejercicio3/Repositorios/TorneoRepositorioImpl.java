@@ -14,28 +14,36 @@ public class TorneoRepositorioImpl implements TorneoRepositorio {
 
     private EntityManager em;
 
+    public TorneoRepositorioImpl(EntityManager em){
+        this.em = em;
+    }
+
     @Override
     public void insert(Torneo e) {
-
+        em.persist(e);
     }
 
     @Override
     public List<TorneoDTO> getTorneos() {
-        return null;
+        return em.createQuery("SELECT TorneoDTO(t.id,t.nombre) FROM Torneo t",TorneoDTO.class).getResultList();
     }
 
     @Override
     public TorneoDTO getTorneoDTOById(int id) {
-        return null;
+        Torneo t = em.find(Torneo.class,id);
+        return new TorneoDTO(t.getId(),t.getNombre());
     }
 
     private Torneo getTorneoById(int id){
-        return null;
+        return em.find(Torneo.class,id);
     }
 
     @Override
     public void delete(int id) {
-
+        Torneo t = this.getTorneoById(id);
+        if(t!=null){
+            em.remove(t);
+        }
     }
 
     @Override
@@ -45,6 +53,9 @@ public class TorneoRepositorioImpl implements TorneoRepositorio {
         if(equipo!=null&&torneo!=null){
             equipo.setTorneo(torneo);
             torneo.getEquipos().add(equipo);
+
+            em.persist(equipo);
+            this.insert(torneo);
         }
     }
 }

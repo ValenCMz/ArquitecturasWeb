@@ -18,7 +18,6 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo", fetch = FetchType.LAZY )
     private List<Jugador>jugadores;
 
-    @JoinColumn(name = "id_torneo")
     @ManyToOne
     private Torneo torneo;
 
