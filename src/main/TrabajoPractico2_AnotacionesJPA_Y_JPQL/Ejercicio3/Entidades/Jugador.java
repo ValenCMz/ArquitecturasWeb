@@ -16,6 +16,11 @@ public class Jugador {
     @ManyToOne //muchos jugadores pueden estan solo en un equipo
     private Equipo equipo;
 
+    @Column
+    private boolean lesionado;
+    @Column
+    private boolean expulsado;
+
     public Jugador() {
 
     }

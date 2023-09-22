@@ -21,6 +21,15 @@ public class Equipo {
     @ManyToOne
     private Torneo torneo;
 
+    /*
+    Un equipo puede estar en varios partidos a lo largo del torneo
+     */
+    @OneToMany(mappedBy = "equipoLocal")
+    private List<Partido> partidosLocales;
+
+    @OneToMany(mappedBy = "equipoVisitante")
+    private List<Partido> partidosVisitantes;
+
     public Equipo(String nombre) {
         this.nombre = nombre;
         this.jugadores = new ArrayList<>();

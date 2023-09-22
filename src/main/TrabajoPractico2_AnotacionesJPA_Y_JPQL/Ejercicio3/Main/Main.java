@@ -27,8 +27,6 @@ public class Main {
         equipoRepositorio.insert(e2);
 
 
-        //Persistir equipo?
-
         Jugador j1R = new Jugador("Franco Armani", "Arquero",e1);
         Jugador j2R = new Jugador("Ramiro Funes Mori","Defensor",e1);
         Jugador j3R = new Jugador("Brun Zuculini", "Mediocampista",e1);
@@ -37,17 +35,12 @@ public class Main {
         Jugador  j2B = new Jugador("Facundo Roncaglia","Defensor",e2);
         Jugador  j3B = new Jugador("Ezequiel Bullaude","Mediocampista",e2);
 
-
         jugadorRepositorio.insert(j1R);
         jugadorRepositorio.insert(j2R);
         jugadorRepositorio.insert(j3R);
         jugadorRepositorio.insert(j1B);
         jugadorRepositorio.insert(j2B);
         jugadorRepositorio.insert(j3B);
-
-
-
-
 
         Torneo torneo = new Torneo("Copa libertadores");
 
@@ -64,11 +57,9 @@ public class Main {
         torneoRepositorio.addEquipoATorneo(e1.getId(), torneo.getId());
         torneoRepositorio.addEquipoATorneo(e2.getId(), torneo.getId());
 
-
-
-
         System.out.println(jugadorRepositorio.getJugadoresPorEquipo(e1.getId()));
         System.out.println(jugadorRepositorio.getJugadoresPorTorneo(torneo.getId()));
+
         em.getTransaction().commit();
         em.close();
         em.close();
